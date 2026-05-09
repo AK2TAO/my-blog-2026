@@ -1,38 +1,19 @@
 ---
 title: Hello World
+date: 2026-05-09
+tags: [hexo, stellar]
+categories: 博客
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+欢迎来到我的博客！这是第一篇文章。
 
-### Create a new post
+## 博客搭建记录
 
-``` bash
-$ hexo new "My New Post"
-```
+- **框架**: Hexo
+- **主题**: Stellar
+- **托管**: Vercel
+- **域名**: 自定义域名
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+## 接下来
 
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+开始写文章吧！
