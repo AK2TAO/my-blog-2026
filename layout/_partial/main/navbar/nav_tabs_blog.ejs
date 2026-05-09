@@ -5,6 +5,11 @@ function layoutDiv() {
   el += '<div class="navbar-blur">';
   el += '<div class="navbar-container">';
   el += '<nav class="post">';
+  if (is_home()) {
+    el += '<a class="active" href="' + pretty_url(config.index_generator.path) + '">' + __("btn.recent_publish") + '</a>';
+  } else {
+    el += '<a href="' + pretty_url(config.index_generator.path) + '">' + __("btn.recent_publish") + '</a>';
+  }
 
   if (site.categories && site.categories.length > 0) {
     if (page.category) {
@@ -26,14 +31,6 @@ function layoutDiv() {
     }
   }
 
-  if (site.posts && site.posts.length > 0) {
-    if (is_archive()) {
-      el += '<a class="active" href="' + pretty_url(config.archive_dir) + '">' + __("btn.archives") + '</a>';
-    } else {
-      el += '<a href="' + pretty_url(config.archive_dir) + '">' + __("btn.archives") + '</a>';
-    }
-  }
-
   const { nav_tabs } = theme.site_tree.index_blog
   if (nav_tabs) {
     for (let key of Object.keys(nav_tabs)) {
@@ -42,6 +39,14 @@ function layoutDiv() {
       } else {
         el += '<a href="' + url_for(nav_tabs[key]) + '">' + key + '</a>';
       }
+    }
+  }
+
+  if (site.posts && site.posts.length > 0) {
+    if (is_archive()) {
+      el += '<a class="active" href="' + pretty_url(config.archive_dir) + '">' + __("btn.archives") + '</a>';
+    } else {
+      el += '<a href="' + pretty_url(config.archive_dir) + '">' + __("btn.archives") + '</a>';
     }
   }
 
