@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  # 生产模式：nginx 提供静态文件，端口 8080
+  prod:
+    build: .
+    container_name: hexo-blog-prod
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  # 开发模式：hexo server + 热重载，端口 4000
+  dev:
+    build: .
+    container_name: hexo-blog-dev
+    ports:
+      - "4000:4000"
+    volumes:
+      # 挂载源文件目录，修改后浏览器刷新即可看到效果
+      - ./source:/app/source
+      - ./_config.stellar.yml:/app/_config.stellar.yml
+      - ./_config.yml:/app/_config.yml
+      - ./layout:/app/layout
+    command: npx hexo server --ip 0.0.0.0
+    restart: unless-stopped
